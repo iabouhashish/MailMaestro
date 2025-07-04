@@ -1,0 +1,34 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+env/
+.venv/
+
+# Distribution / packaging
+.build/
+dist/
+*.egg-info/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment variables
+.env
+
+# OAuth tokens and credentials
+token.json
+credentials.json
+
+# Database
+events.db
+
+# Docker
+docker-compose.override.yml
+
+# Logs
+*.log

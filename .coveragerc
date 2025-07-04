@@ -1,0 +1,16 @@
+[run]
+source = src/mail_maestro
+omit =
+    tests/*
+    */__init__.py
+    .github/*
+    k8s/*
+    config/*
+    docs/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if __name__ == .__main__.:
+    @task
+    @pytest

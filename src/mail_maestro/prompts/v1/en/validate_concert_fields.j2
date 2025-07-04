@@ -1,0 +1,43 @@
+Validate the following concert event details from the email below.
+
+Return ONLY a valid JSON object with these exact fields and no extra text or commentary.
+
+If there are multiple concerts in the email, return an array of objects (one per concert). If there is only one concert, return a single object (not wrapped in an array).
+
+Required fields:
+- event_name: The name of the concert event.
+- date_time: The date and time of the concert, always in ISO 8601. If the year is not specified, use the current year ({{ current_year }}), these will always be {{current_year}} or more.
+- venue_address: The full venue name and address.
+- presale_info: Details about presale access or timing.
+- ticket_link: Direct URL to purchase tickets.
+- additional_notes: Any extra information or remarks.
+
+Response format:
+```json
+// For a single concert:
+{
+  "event_name": "",
+  "date_time": "YYYY-MM-DD",
+  "venue_address": "",
+  "presale_info": "",
+  "ticket_link": "",
+  "additional_notes": ""
+}
+// For multiple concerts:
+[
+  {
+    "event_name": "",
+    "date_time": "YYYY-MM-DD",
+    "venue_address": "",
+    "presale_info": "",
+    "ticket_link": "",
+    "additional_notes": ""
+  },
+  // ...more objects...
+]
+```
+Email Body:
+{{ body }}
+
+Concert Info already extracted:
+{{ concert }}

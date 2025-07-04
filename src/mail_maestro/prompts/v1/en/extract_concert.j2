@@ -1,0 +1,52 @@
+Extract the following concert event details from the email below.
+
+Return ONLY a valid JSON object with these exact fields and no extra text or commentary.
+
+If there are multiple concerts in the email, return an array of objects (one per concert). If there is only one concert, return a single object (not wrapped in an array).
+
+Required fields:
+- event_name: The name of the concert event.
+- date_time: The date and time of the concert
+- venue_address: The full venue name and address.
+- presale_info: Details about presale access or timing.
+- ticket_link: Direct URL to purchase tickets.
+- additional_notes: Any extra information or remarks.
+
+Important Strict Rules (you must always follow these exactly):
+1. If the sender is info@elsewhere.club, venue_address must be "Elsewhere, Brooklyn, NY".
+2. If the sender is foresthillsstadium@events.bowerypresents.com, venue_address must be "Forest Hills Stadium, Forest Hills, NY".
+3. If the sender is ln.ny@eml.livenation.com, venue_address must be "Irving Plaza, NY".
+4. If the sender is BrooklynParamount@eml.livenation.com, venue_address must be "Paramount Theatre, Brooklyn, NY".
+5. If the sender is any other email, use the venue address extracted from each event.
+6. If the date_time does not specify a year or specifies a year less than the current year, use the current year ({{ current_year }}).
+7. date_time must always be in ISO 8601 format (YYYY-MM-DD).
+8. If there are the words "Use Code" or "presale code" include the string after in the presale_info field.
+
+You must not ignore or skip any of these rules. If a rule applies, always use it, even if it conflicts with extracted data.
+
+Response format:
+```json
+// For a single concert:
+{
+  "event_name": "",
+  "date_time": "YYYY-MM-DD",
+  "venue_address": "",
+  "presale_info": "",
+  "ticket_link": "",
+  "additional_notes": ""
+}
+// For multiple concerts:
+[
+  {
+    "event_name": "",
+    "date_time": "YYYY-MM-DD",
+    "venue_address": "",
+    "presale_info": "",
+    "ticket_link": "",
+    "additional_notes": ""
+  }
+  // ...more objects...
+]
+```
+Sender: {{ sender }}
+{{ body }}

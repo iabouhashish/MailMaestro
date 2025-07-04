@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+env/
+.venv/
+
+# Distribution files
+build/
+dist/
+*.egg-info/
+
+# Environment and secrets
+.env
+credentials.json
+token.json
+
+# SQLite database
+events.db
+
+# Editor configs
+.vscode/
+.idea/
+
+# Docker
+.dockerignore

@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mailmaestro-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mailmaestro
+  template:
+    metadata:
+      labels:
+        app: mailmaestro
+    spec:
+      containers:
+      - name: mailmaestro
+        image: ghcr.io/your-org/mailmaestro:latest
+        env:
+        - name: ENTRYPOINT_MODE
+          value: "serve"
+        - name: TEMPLATE_VERSION
+          value: "v1"
+        - name: GMAIL_CREDENTIALS_PATH
+          value: "/secrets/credentials.json"
+        - name: GMAIL_TOKEN_PATH
+          value: "/secrets/token.json"
+        volumeMounts:
+        - name: secrets
+          mountPath: /secrets
+          readOnly: true
+      volumes:
+      - name: secrets
+        secret:
+          secretName: mailmaestro-secrets

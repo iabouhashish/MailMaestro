@@ -1,0 +1,27 @@
+version: 1
+
+pipelines:
+  default:
+    - FetchEmails
+    - ClassifyEmails
+    - BranchByType
+
+sub_pipelines:
+  recruiter:
+    - ExtractRecruiter
+    - ComposeRecruiter
+    - FinalizeRecruiter
+  transactional:
+    - LabelTransactional
+  concert:
+    - ExtractConcert
+    - ComposeConcert
+    - ScheduleConcert
+    - CreateCalendarInvite
+
+branching:
+  BranchByType:
+    recruiter: recruiter
+    transactional: transactional
+    concert: concert
+    other: []
