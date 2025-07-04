@@ -57,7 +57,7 @@ async def run_mailmaestro_pipeline(prompts_dir, lang):
         }
         llm_context = json.dumps(ctx, indent=2, ensure_ascii=False)
         # Run the main pipeline
-        await mailmaestro_agent.run_async(ctx)
+        await mailmaestro_agent.run_async(llm_context)
     
 
 # Optional: Async FastAPI server for MCP/K8s deployment
