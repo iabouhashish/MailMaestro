@@ -8,7 +8,7 @@ PyYAML==6.0.2
 langdetect==1.0.9
 google-auth==2.40.3
 google-auth-oauthlib==1.2.2
-google-api-python-client==2.173.0
+google-api-python-client==2.176.0
 ics==0.7.2
 python-dotenv==1.1.0
 pytest==8.4.1
