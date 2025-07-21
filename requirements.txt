@@ -16,7 +16,7 @@ setuptools==80.9.0
 fastapi[standard]==0.115.13
 apscheduler==3.11.0
 langchain-community==0.3.26
-langchain-openai==0.3.24
+langchain-openai==0.3.28
 beautifulsoup4==4.13.4
 pytesseract>=0.3.10
 Pillow>=10.0.0
