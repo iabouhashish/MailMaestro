@@ -6,7 +6,7 @@ pydantic==2.11.7
 dateparser==1.2.1
 PyYAML==6.0.2
 langdetect==1.0.9
-google-auth==2.40.3
+google-auth==2.41.1
 google-auth-oauthlib==1.2.2
 google-api-python-client==2.173.0
 ics==0.7.2
