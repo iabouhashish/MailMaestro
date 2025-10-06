@@ -20,5 +20,5 @@ langchain-openai==0.3.24
 beautifulsoup4==4.13.4
 pytesseract>=0.3.10
 Pillow>=10.0.0
-notion-client==2.4.0
+notion-client==2.5.0
 any-agent[langchain]
